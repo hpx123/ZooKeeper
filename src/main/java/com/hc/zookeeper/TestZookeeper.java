@@ -65,6 +65,6 @@ public class TestZookeeper {
     @Test
     public void exist() throws KeeperException, InterruptedException {
         Stat stat = zkClient.exists("/hututu", false);
-        System.out.println(stat == null? "noexist" : "exist");
+        System.out.println(stat == null? "noexist" : stat);
     }
 }
