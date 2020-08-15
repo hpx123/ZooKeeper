@@ -40,7 +40,7 @@ public class TestZookeeper {
     /**创建根节点**/
     @Test
     public void createNode() throws KeeperException, InterruptedException {
-        String path = zkClient.create("/hututu", "huchengzuimei".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+        String path = zkClient.create("/hututu/hututu_", "".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT_SEQUENTIAL);
         System.out.println(path);
     }
 
@@ -49,7 +49,7 @@ public class TestZookeeper {
     public void getChildren(){
         List<String> children = null;
         try {
-            children = zkClient.getChildren("/", true);
+            children = zkClient.getChildren("/hututu", true);
             for(String child : children){
                 System.out.println(child);
             }
